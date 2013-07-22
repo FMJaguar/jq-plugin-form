@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+		<link href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/daterangepicker.jQuery.js"></script>
+		<script src="./js/appform.js"></script>
+		<script src="./js/jquery.maskedinput.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/jquery-ui-git.css" />
+	</head>
+	<body>
+		<style>
+		</style>
+		<div>
+			<h3>Form</h3>
+			<form method="POST" action="#">
+
+				<!-- 
+					plugin will look for .global-errors within a .control-group 
+					and show errors there
+				-->
+
+				<div class="control-group error well" style="display:none">
+					<label class="control-label" for="global-errors">Please correct the following errors:</label>
+					<div class="global-errors"></div>
+				</div>	
+
+				<div class="control-group">
+				  <label class="control-label" for="inputWarning">Input One</label>
+				  <div class="controls">
+				    <input type="text" id="input-one">
+				    <span class="help-inline"></span>
+				  </div>
+				</div>
+				 
+				<div class="control-group">
+				  <label class="control-label" for="inputError">Input Two</label>
+				  <div class="controls">
+				    <input type="text" id="input-two">
+				    <span class="help-inline"></span>
+				  </div>
+				</div>
+
+				<!-- 
+					multiple fields per row, per:
+					http://stackoverflow.com/questions/12252815/how-to-use-labels-inside-of-a-control-row
+				-->
+
+				<style>
+					.control-row > .control-group {
+	    			display: inline-block;
+					  vertical-align: top;
+					}
+				</style>
+
+				<div class="control-row">
+				    <div class="control-group">
+				        <label for="ssn" class="control-label">Left Input</label>
+				        <div class="controls">
+				            <input type="text" id="input-left" name="input-left" />
+				        </div>                
+				    </div>
+				    <div class="control-group">
+				        <label for="dob" class="control-label">Right Input</label>
+				        <div class="controls input-append">
+				            <input type="text" id="input-right" name="input-right" />
+				        </div>
+				    </div>           
+				</div>
+
+				<div class="control-group">
+				  <label class="control-label" for="inputInfo">Date Mask</label>
+				  <div class="controls">
+				    <input type="text" id="input-datemask">
+				    <span class="help-inline"></span>
+				  </div>
+				</div>
+
+				<div class="control-group">
+				  <label class="control-label" for="inputInfo">Date Picker</label>
+				  <div class="controls">
+				    <input type="text" id="input-datepicker">
+				    <span class="help-inline"></span>
+				  </div>
+				</div>
+
+				<div class="control-group">
+				  <label class="control-label" for="inputInfo">Select</label>
+				  <div class="controls">
+				    <select name="input-select">
+				    	<option value="one">One</option>
+				    </select>
+				    <span class="help-inline"></span>
+				  </div>
+				</div>
+
+				<div class="control-group">
+				  <label class="control-label" for="inputInfo">Autocomplete</label>
+				  <div class="controls">
+				    <input type="text" name="input-autocomplete" id="input-autocomplete"/>
+				    <span class="help-inline"></span>
+				  </div>
+				</div>
+
+				<div class="control-row">
+					<div class="control-group">
+						<button class="primary-btn">Submit</button>
+					</div>
+				</div>
+
+			</form>
+		</div>
+		<script>
+			(function($){
+				"use strict";
+   			$(function(){
+					//TODO: add data* fields to hint input elements
+					//investigate modernizer for html5 date with fallback
+					$('#input-datemask').mask('99/99/9999');
+      		$('#input-datepicker').datepicker();
+   			});
+			})(jQuery);
+		</script>
+	</body>
+</html>
